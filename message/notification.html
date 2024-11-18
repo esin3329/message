@@ -2,8 +2,8 @@
 <html lang="ko">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>게임 이벤트 공지 및 업데이트 알림 시스템</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
 <div class="container">
@@ -11,7 +11,6 @@
     <div id="announcements"></div>
     <div id="notification" class="notification">새로운 공지가 있습니다!</div>
 </div>
-
 <script>
     const announcementsContainer = document.getElementById('announcements');
     const notification = document.getElementById('notification');
@@ -19,7 +18,7 @@
     // 공지사항 데이터를 가져오는 함수
     async function fetchAnnouncements() {
         try {
-            const response = await fetch('/api/announcements'); // 서버의 공지사항 API에서 데이터 가져오기
+            const response = await fetch('http://localhost:8080/api/announcements'); // 서버의 공지사항 API에서 데이터 가져오기
             const announcements = await response.json();
 
             announcementsContainer.innerHTML = ''; // 기존 내용 비우기
