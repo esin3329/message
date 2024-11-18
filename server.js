@@ -28,7 +28,7 @@ function addAnnouncement(title, content) {
 }
 
 // 서버 실행
-const PORT = 8080;
+const PORT = 3000;
 app.listen(PORT, () => {
     console.log(`서버가 http://127.0.0.1:${PORT}에서 실행 중입니다.`);
 

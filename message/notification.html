@@ -18,7 +18,7 @@
     // 공지사항 데이터를 가져오는 함수
     async function fetchAnnouncements() {
         try {
-            const response = await fetch('http://localhost:8080/api/announcements'); // 서버의 공지사항 API에서 데이터 가져오기
+            const response = await fetch('http://localhost:3000/api/announcements'); // 서버의 공지사항 API에서 데이터 가져오기
             const announcements = await response.json();
 
             announcementsContainer.innerHTML = ''; // 기존 내용 비우기
