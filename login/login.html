@@ -1,19 +1,59 @@
 <!DOCTYPE html>
 <html lang="ko">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>로그인 페이지</title>
-    <link rel="stylesheet" href="style.css">
-    <script src="script.js"></script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>나의 홈페이지</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js"></script>
 </head>
 <body>
 
-    <div class="login-form">
-        <h2>로그인</h2>
-        <input type="text" id="username" placeholder="아이디" required>
-        <input type="password" id="password" placeholder="비밀번호" required>
-        <button onclick="login()">로그인</button>
-    </div>
+  <!-- 로그인 폼 -->
+  <div id="login-screen" class="login-form">
+    <h2>로그인</h2>
+    <input type="text" id="username" placeholder="아이디" required>
+    <input type="password" id="password" placeholder="비밀번호" required>
+    <button onclick="login()">로그인</button>
+  </div>
+
+  <!-- 홈페이지 콘텐츠 (로그인 후에 나타날 영역) -->
+  <div id="home-screen" style="display: none;">
+    <header>
+      <h1>나의 기말 프로젝트 홈페이지</h1>
+    </header>
+
+    <nav>
+      <ul>
+        <li><a href="#about">소개</a></li>
+        <li><a href="#projects">프로젝트</a></li>
+        <li><a href="#contact">연락처</a></li>
+        <li><a href="#login" onclick="logout()">로그아웃</a></li>
+      </ul>
+    </nav>
+
+    <section id="about">
+      <h2>소개</h2>
+      <p>안녕하세요! 저는 컴퓨터공학과 전희준입니다. 이 홈페이지는 제 기말 프로젝트입니다.</p>
+    </section>
+
+    <section id="projects">
+      <h2>프로젝트</h2>
+      <ul>
+        <li>프로젝트 1: 설명</li>
+        <li>프로젝트 2: 설명</li>
+      </ul>
+    </section>
+
+    <section id="contact">
+      <h2>연락처</h2>
+      <p>이메일: [이메일 주소]</p>
+    </section>
+
+    <footer>
+      <p>&copy; 2024 나의 홈페이지</p>
+    </footer>
+  </div>
+
 </body>
 </html>

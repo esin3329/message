@@ -1,17 +1,25 @@
+// 미리 설정된 아이디와 비밀번호
+const validUsername = "esin";  // 아이디 설정
+const validPassword = "1234";  // 비밀번호 설정
+
+// 로그인 함수
 function login() {
-    const username = document.getElementById('username').value;
-    const password = document.getElementById('password').value;
+  const username = document.getElementById('username').value;
+  const password = document.getElementById('password').value;
 
-    if (username === '' || password === '') {
-        alert('아이디와 비밀번호를 모두 입력해주세요.');
-        return;
-    }
+  // 입력값이 미리 설정된 값과 일치하는지 확인
+  if (username === validUsername && password === validPassword) {
+    // 로그인 성공 시, 로그인 화면 숨기고 홈페이지 콘텐츠 표시
+    document.getElementById('login-screen').style.display = 'none';
+    document.getElementById('home-screen').style.display = 'block';
+  } else {
+    alert("아이디 또는 비밀번호가 잘못되었습니다.");
+  }
+}
 
-    // 예시: 사용자 정보 확인 (여기서는 간단히 로컬스토리지 활용)
-    if (username === 'esin' && password === '1234') {
-        alert('로그인 성공!');
-        localStorage.setItem('loggedIn', 'true');
-    } else {
-        alert('아이디 또는 비밀번호가 잘못되었습니다.');
-    }
+// 로그아웃 함수
+function logout() {
+  // 홈페이지 콘텐츠 숨기고 로그인 화면 다시 보이기
+  document.getElementById('home-screen').style.display = 'none';
+  document.getElementById('login-screen').style.display = 'block';
 }
