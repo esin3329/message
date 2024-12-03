@@ -23,3 +23,21 @@ function logout() {
   document.getElementById('home-screen').style.display = 'none';
   document.getElementById('login-screen').style.display = 'block';
 }
+
+function query() {
+	let ret = confirm("네이버로 이동하시겠습니까?");
+	return ret; 
+}
+
+function noAction(e) {
+	e.preventDefault(); 
+}
+
+function query() {
+	let ret = confirm("구글로 이동하시겠습니까?");
+	return ret; 
+}
+
+function noAction(e) {
+	e.preventDefault(); 
+}
