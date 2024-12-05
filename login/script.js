@@ -35,26 +35,6 @@ function logout() {
   document.getElementById('login-screen').style.display = 'block';
 }
 
-
-
-function query() {
-	let ret = confirm("네이버로 이동하시겠습니까?");
-	return ret; 
-}
-
-function noAction(e) {
-	e.preventDefault(); 
-}
-
-function query() {
-	let ret = confirm("구글로 이동하시겠습니까?");
-	return ret; 
-}
-
-function noAction(e) {
-	e.preventDefault(); 
-}
-
 function checkTheme() {
   // 로컬 스토리지에서 저장된 테마를 가져옵니다.
   const theme = localStorage.getItem('theme');
@@ -99,4 +79,22 @@ function toggleTheme() {
       h2.classList.add('dark-mode');
     });
   }
+}
+
+function query1() {
+	let ret = confirm("네이버로 이동하시겠습니까?");
+	return ret; 
+}
+
+function noAction(e) {
+	e.preventDefault(); 
+}
+
+function query2() {
+	let ret = confirm("구글로 이동하시겠습니까?");
+	return ret; 
+}
+
+function noAction(e) {
+	e.preventDefault(); 
 }
