@@ -15,12 +15,14 @@
     <input type="text" id="username" placeholder="아이디" required>
     <input type="password" id="password" placeholder="비밀번호" required>
     <button onclick="login()">로그인</button>
+    <button type="button" id="toggle-password" onclick="togglePassword()">비밀번호 보기</button>
   </div>
 
   <!-- 홈페이지 콘텐츠 (로그인 후에 나타날 영역) -->
   <div id="home-screen" style="display: none;">
     <header>
       <h1>나의 기말 프로젝트 홈페이지</h1>
+      <button id="theme-toggle" onclick="toggleTheme()">다크 모드</button> <!-- 테마 토글 버튼 -->
     </header>
 
     <nav>
@@ -44,14 +46,16 @@
           onclick="return query()">
           네이버 바로가기</a>
         </li>
-        <li><a href="http://wwww.goolge.com" 
+        <li><a href="http://www.google.com" 
           onclick="return query()">
         구글 바로가기</a></li>
+        </li>
       </ul>
     </section>
 
     <section id="contact">
-      <h2>연락처 010-2180-2795</h2>
+      <h2>연락처</h2>
+      <p>010-2180-2795</p>
       <p>이메일: [qlqlf2226@gmail.com]</p>
     </section>
 
