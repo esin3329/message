@@ -1,0 +1,10 @@
+packages:
+  - "apps/*"
+catalog:
+  hono: 4.13.13
+onlyBuiltDependencies:
+  - "@prisma/engines"
+  - better-sqlite3
+  - esbuild
+  - prisma
+  - puppeteer

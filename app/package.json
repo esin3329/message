@@ -1,0 +1,43 @@
+{
+  "name": "message-workspace",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.18.1",
+  "engines": {
+    "node": ">=24.7.0 <25"
+  },
+  "scripts": {
+    "dev": "corepack pnpm -r --parallel dev",
+    "build": "corepack pnpm --filter @repo/api build && corepack pnpm --filter @repo/web build",
+    "lint": "eslint .",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "test": "corepack pnpm -r test",
+    "lhci": "corepack pnpm exec lhci autorun --config=lighthouserc.cjs"
+  },
+  "devDependencies": {
+    "@eslint/js": "^9.39.0",
+    "@lhci/cli": "0.15.1",
+    "eslint": "^9.39.0",
+    "eslint-config-prettier": "^10.1.8",
+    "eslint-plugin-react-hooks": "^7.0.1",
+    "eslint-plugin-react-refresh": "^0.4.24",
+    "globals": "^16.5.0",
+    "prettier": "^3.6.2",
+    "puppeteer": "25.13.0",
+    "typescript": "~5.9.3",
+    "typescript-eslint": "^8.46.0"
+  },
+  "pnpm": {
+    "overrides": {
+      "hono": "4.13.13"
+    },
+    "onlyBuiltDependencies": [
+      "@prisma/engines",
+      "better-sqlite3",
+      "esbuild",
+      "prisma",
+      "puppeteer"
+    ]
+  }
+}

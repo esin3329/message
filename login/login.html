@@ -5,24 +5,27 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>나의 홈페이지</title>
   <link rel="stylesheet" href="style.css">
-  <script src="script.js"></script>
+  <script src="script.js" defer></script>
 </head>
 <body onload="alert('이 사이트는 기말과제로 종강 후 삭제됩니다.')">
 
   <!-- 로그인 폼 -->
-  <div id="login-screen" class="login-form">
-    <h2>로그인</h2>
-    <input type="text" id="username" placeholder="아이디" required>
-    <input type="password" id="password" placeholder="비밀번호" required>
-    <button onclick="login()">로그인</button>
-    <button type="button" id="toggle-password" onclick="togglePassword()">비밀번호 보기</button>
-  </div>
+  <form id="login-screen" class="login-form" aria-labelledby="login-title">
+    <h2 id="login-title">로그인</h2>
+    <p class="login-notice">과제용 로그인 시연입니다. 서버 인증이 없으며, 홈페이지 콘텐츠와 연락처는 로그인으로 보호되지 않습니다.</p>
+    <label for="username">아이디</label>
+    <input type="text" id="username" name="username" placeholder="아이디" autocomplete="username" required>
+    <label for="password">비밀번호</label>
+    <input type="password" id="password" name="password" placeholder="비밀번호" autocomplete="current-password" required>
+    <button type="submit">로그인</button>
+    <button type="button" id="toggle-password" onclick="togglePassword()" aria-controls="password" aria-pressed="false">비밀번호 보기</button>
+  </form>
 
   <!-- 홈페이지 콘텐츠 (로그인 후에 나타날 영역) -->
-  <div id="home-screen" style="display: none;">
+  <div id="home-screen" hidden>
     <header>
-      <h1>나의 기말 프로젝트 홈페이지</h1>
-      <button id="theme-toggle" onclick="toggleTheme()">다크 모드</button> <!-- 테마 토글 버튼 -->
+      <h1 tabindex="-1">나의 기말 프로젝트 홈페이지</h1>
+      <button type="button" id="theme-toggle" onclick="toggleTheme()" aria-pressed="false">다크 모드</button>
     </header>
 
     <nav>
@@ -30,7 +33,7 @@
         <li><a href="#about">소개</a></li>
         <li><a href="#projects">프로젝트</a></li>
         <li><a href="#contact">연락처</a></li>
-        <li><a href="#login" onclick="logout()">로그아웃</a></li>
+        <li><button type="button" class="logout-button" onclick="logout()">로그아웃</button></li>
       </ul>
     </nav>
 
@@ -42,14 +45,8 @@
     <section id="projects">
       <h2>프로젝트</h2>
       <ul>
-        <li><a href="http://www.naver.com" 
-          onclick="return query1()">
-          네이버 바로가기</a>
-        </li>
-        <li><a href="http://www.google.com" 
-          onclick="return query2()">
-        구글 바로가기</a></li>
-        </li>
+        <li><a href="https://www.naver.com" onclick="return query1()">네이버 바로가기</a></li>
+        <li><a href="https://www.google.com" onclick="return query2()">구글 바로가기</a></li>
       </ul>
     </section>
 

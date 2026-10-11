@@ -1,3 +1,9 @@
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
 /* 기본 스타일 */
 body {
   font-family: Arial, sans-serif;
@@ -5,24 +11,26 @@ body {
   padding: 0;
   background-color: #f4f4f4;
   color: #333; /* 기본 텍스트 색상 */
+  color-scheme: light;
+  overflow-wrap: anywhere;
 }
 
 header {
   background-color: #333;
   color: white;
-  padding: 10px 0;
+  padding: 10px 16px;
   text-align: center;
 }
 
 nav ul {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 12px 20px;
   list-style-type: none;
-  padding: 0;
+  padding: 0 20px;
 }
 
-nav ul li {
-  display: inline;
-  margin-right: 20px;
-}
 
 nav ul li a {
   text-decoration: none;
@@ -41,15 +49,13 @@ footer {
   padding: 10px;
   background-color: #333;
   color: white;
-  position: fixed;
-  width: 100%;
-  bottom: 0;
 }
 
 /* 로그인 폼 스타일 */
 .login-form {
-  width: 300px;
-  margin: 0 auto;
+  width: calc(100% - 32px);
+  max-width: 340px;
+  margin: 16px auto;
   padding: 20px;
   background-color: #fff;
   border-radius: 8px;
@@ -57,10 +63,21 @@ footer {
   text-align: center;
 }
 
+.login-form label {
+  display: block;
+  text-align: left;
+}
+
+.login-notice {
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+}
+
 .login-form input {
   width: 100%;
   padding: 10px;
-  margin: 10px 0;
+  margin: 6px 0 16px;
   border: 1px solid #ddd;
   border-radius: 4px;
   font-size: 16px;
@@ -69,78 +86,75 @@ footer {
 .login-form button {
   width: 100%;
   padding: 10px;
-  background-color: #333;
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+}
+
+.login-form button + button {
+  margin-top: 8px;
 }
 
 .login-form button:hover {
   background-color: #555;
 }
 
-/* 다크 모드 스타일 */
-body.dark-mode {
-  background-color: #1a1a1a; /* 더 어두운 배경 (검은색에 가까운 색) */
-}
-
-header.dark-mode {
-  background-color: #222222; /* 헤더의 배경을 더 어두운 색으로 설정 */
-}
-
-nav.dark-mode {
-  color: #ffffff; /* 링크 글자색 흰색 */
-}
-
-nav.dark-mode a {
-  color: #ffffff; /* 링크 글자색 흰색 */
-}
-
-nav.dark-mode li {
-  color: #ffffff; /* 리스트 항목의 글자색 흰색 */
-  padding: 8px;
-  margin-bottom: 5px;
-  background-color: #444444; /* 리스트 항목 배경을 어두운 회색으로 설정 */
-  border-radius: 5px;
-}
-
-footer.dark-mode {
-  background-color: #333333; /* 푸터 배경을 어두운 색으로 */
-  color: #ffffff; /* 푸터 텍스트 색상 흰색 */
-}
-
-button.dark-mode {
-  background-color: #444444; /* 다크 모드 버튼 배경 */
-  color: #ffffff; /* 버튼 텍스트 흰색 */
-}
-
-h2.dark-mode {
-  background-color: #333333; /* 어두운 배경 */
-  color: #ffffff; /* 글자색 흰색 */
-  padding: 10px;
-  border-radius: 5px;
-}
-
-section.dark-mode {
-  background-color: #000000; /* 검은색 배경 */
-  color: #ffffff; /* 흰색 텍스트 */
-}
-
-/* 기본 스타일 */
 button {
   padding: 10px 20px;
+  background-color: #333;
+  color: white;
+  border: none;
+  border-radius: 4px;
+  font: inherit;
   cursor: pointer;
 }
 
-button.dark-mode {
-  background-color: #666666;
-  color: #ffffff;
+nav .logout-button {
+  padding: 0;
+  background: transparent;
+  color: #333;
 }
 
-button.light-mode {
-  background-color: #f0f0f0;
-  color: #000000;
+/* 테마는 body의 클래스 하나로 모든 하위 요소에 적용합니다. */
+body.dark-mode {
+  color-scheme: dark;
+  background-color: #1a1a1a;
+  color: #f4f4f4;
+}
+
+body.dark-mode header,
+body.dark-mode footer,
+body.dark-mode section,
+body.dark-mode .login-form {
+  background-color: #222;
+}
+
+body.dark-mode a {
+  color: #9ecbff;
+}
+
+body.dark-mode nav a,
+body.dark-mode nav .logout-button {
+  color: #f4f4f4;
+}
+
+body.dark-mode .login-form input {
+  background-color: #333;
+  color: #fff;
+  border-color: #666;
+}
+
+body.dark-mode .login-form input::placeholder {
+  color: #ccc;
+}
+
+body.dark-mode button {
+  background-color: #444;
+}
+
+body.dark-mode .login-form button:hover {
+  background-color: #555;
+}
+
+body.dark-mode nav .logout-button {
+  background: transparent;
 }
 
 
